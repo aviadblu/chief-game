@@ -9,7 +9,7 @@
     "not ie <= 8"
   ],
   "scripts": {
-    "build": "rm -rf ./dist/ && npm run check-types && webpack --mode production --config ./build/webpack.prod.config.js",
+    "build": "rm -rf ./dist/ && webpack --mode production --config ./build/webpack.prod.config.js",
     "dev": "webpack serve --port 9090 --mode development --config ./build/webpack.dev.config.js",
     "check-types": "tsc"
   },
