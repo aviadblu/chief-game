@@ -1,5 +1,5 @@
 export function makePlayer(canvasW, canvasH, ctx, image) {
-    const moveSpeed = 15;
+    const moveSpeed = 10;
     const imageSize = 85;
     const img = new Image()
     img.src = image
@@ -51,10 +51,10 @@ export function makePlayer(canvasW, canvasH, ctx, image) {
         }
 
         return Object.freeze({
-            draw: draw,
-            press: press,
-            update: update,
-            reportLocation: reportLocation
+            draw,
+            press,
+            update,
+            reportLocation
         })
     }
 }

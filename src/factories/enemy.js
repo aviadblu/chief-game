@@ -1,5 +1,5 @@
 export function makeEnemy(canvasW, canvasH, ctx, image) {
-    const moveSpeed = 5;
+    const moveSpeed = 1;
     const imageSize = 140;
     const img = new Image()
     img.src = image
@@ -47,10 +47,10 @@ export function makeEnemy(canvasW, canvasH, ctx, image) {
         }
 
         return Object.freeze({
-            draw: draw,
-            updateMoveDirectionPoint: updateMoveDirectionPoint,
-            update: update,
-            reportLocation: reportLocation
+            draw,
+            updateMoveDirectionPoint,
+            update,
+            reportLocation
         })
     }
 }
