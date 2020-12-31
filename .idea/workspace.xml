@@ -2,16 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c0718084-fa55-48c8-9046-ba7800072230" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/factories/controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/factories/snack.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/factories/snacksCollectedBar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/factories/timerBar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/factories/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/factories/frameDrawManager.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/factories/stateManager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/factories/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/factories/controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/factories/enemy.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/factories/enemy.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/factories/player.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/factories/player.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/factories/snack.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/factories/snack.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/factories/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/factories/utils.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,10 +47,10 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/factories" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../code/Kryon_PD/Src/ABPD/Server/Orchestrator" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="C:\pcode\chief-game\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -93,12 +94,12 @@
       <list>
         <item itemvalue="npm.dev" />
         <item itemvalue="npm.build" />
-        <item itemvalue="JavaScript Debug.index.html (1)" />
         <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="JavaScript Debug.index.html (1)" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -111,11 +112,14 @@
       <updated>1608830088975</updated>
       <workItem from="1608830090079" duration="2764000" />
       <workItem from="1609227748958" duration="15991000" />
+      <workItem from="1609402392915" duration="3004000" />
+      <workItem from="1609405678274" duration="42000" />
+      <workItem from="1609405754685" duration="949000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

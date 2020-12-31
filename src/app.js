@@ -1,9 +1,11 @@
 import "./scss/main.scss";
+import {makeUtils} from "./factories/utils";
+import {makeStateManager} from "./factories/stateManager";
+import {makeController} from "./factories/controller";
 import {makeCanvas, makeCanvasWrapper} from "./factories/domFactory"
 import {makePlayer} from "./factories/player"
 import {makeEnemy} from "./factories/enemy"
 import {makeSnack} from "./factories/snack";
-import {makeController} from "./factories/controller";
 import {makeTimerBar} from "./factories/timerBar";
 import {makeSnacksCollectedBar} from "./factories/snacksCollectedBar";
 import playerImg from "./assets/aviad-linoy.png";
@@ -11,22 +13,33 @@ import enemyImg from "./assets/chief.png";
 import snackImg from "./assets/lolipop.png";
 
 
+const canvas = makeCanvas(800);
+const canvasWrapper = makeCanvasWrapper();
+canvasWrapper.appendChild(canvas);
+const ctx = canvas.getContext('2d');
+const utils = makeUtils()()
+const stateManager = makeStateManager(utils)()
+const controller = makeController(canvas.width, canvas.height, ctx, utils, stateManager)()
+
+
+
+controller.start()
+
+
+
 function Start() {
     let stopFlag = false;
     let collectedSnacks = 0;
-    const canvas = makeCanvas(800);
-    const canvasWrapper = makeCanvasWrapper();
-    canvasWrapper.appendChild(canvas);
-    const ctx = canvas.getContext('2d');
 
-    const controller = makeController(canvas.width, canvas.height, ctx)()
+
+    const controller = makeController(canvas.width, canvas.height, ctx, utils)()
     controller.startTimer()
 
     const x = canvas.width / 2
     const y = canvas.height / 2
     document.body.appendChild(canvasWrapper)
-    const player = makePlayer(canvas.width, canvas.height, ctx, playerImg)(x - 300, y)
-    const enemy = makeEnemy(canvas.width, canvas.height, ctx, enemyImg)(x + 300, y)
+    const player = makePlayer(canvas.width, canvas.height, ctx, playerImg)([x - 300, y])
+    const enemy = makeEnemy(canvas.width, canvas.height, ctx, enemyImg)([x + 300, y])
     const timerBar = makeTimerBar(canvas.width, canvas.height, ctx)()
     const snacksCollectedBar = makeSnacksCollectedBar(canvas.width, canvas.height, ctx)()
 
@@ -91,15 +104,13 @@ function Start() {
     }
 
     function addSnack(duration) {
-        const randX = getRandomArbitrary(0, canvas.width);
-        const randY = getRandomArbitrary(0, canvas.height);
-        const snack = makeSnack(canvas.width, canvas.height, ctx)(randX, randY, snackImg, 100)
+        const randX = utils.getRandomArbitrary(0, canvas.width);
+        const randY = utils.getRandomArbitrary(0, canvas.height);
+        const snack = makeSnack(canvas.width, canvas.height, ctx)([randX, randY], snackImg, 100)
         controller.addSnack(snack, duration)
     }
 
-    function getRandomArbitrary(min, max) {
-        return Math.random() * (max - min) + min;
-    }
+
 
     return Object.freeze({
         stop

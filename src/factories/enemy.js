@@ -7,7 +7,7 @@ export function makeEnemy(canvasW, canvasH, ctx, image) {
     let moveDirectionX = 0;
     let moveDirectionY = 0;
 
-    return function (x, y) {
+    return function (position) {
         const center = imageSize / 2
         const minX = center
         const maxX = canvasW - center
@@ -15,7 +15,7 @@ export function makeEnemy(canvasW, canvasH, ctx, image) {
         const maxY = canvasH - center
 
         function draw() {
-            ctx.drawImage(img, x - center, y - center, imageSize, imageSize)
+            ctx.drawImage(img, position[0] - center, position[1] - center, imageSize, imageSize)
         }
 
         function vectorNorm(vec) {
@@ -24,26 +24,26 @@ export function makeEnemy(canvasW, canvasH, ctx, image) {
         }
 
         function updateMoveDirectionPoint(targetPoint) {
-            const directionVec = vectorNorm([x - targetPoint[0], y - targetPoint[1]])
-            x = x - directionVec[0] * moveSpeed
-            y = y - directionVec[1] * moveSpeed
+            const directionVec = vectorNorm([position[0] - targetPoint[0], position[1] - targetPoint[1]])
+            position[0] = position[0] - directionVec[0] * moveSpeed
+            position[1] = position[1] - directionVec[1] * moveSpeed
         }
 
         function update() {
-            x = x + moveDirectionX;
-            y = y + moveDirectionY;
+            position[0] = position[0] + moveDirectionX;
+            position[1] = position[1] + moveDirectionY;
             fixBoundaries()
         }
 
         function fixBoundaries() {
-            if (x < minX) x = minX
-            if (x > maxX) x = maxX
-            if (y < minY) y = minY
-            if (y > maxY) y = maxY
+            if (position[0] < minX) position[0] = minX
+            if (position[0] > maxX) position[0] = maxX
+            if (position[1] < minY) position[1] = minY
+            if (position[1] > maxY) position[1] = maxY
         }
 
         function reportLocation() {
-            return [x, y]
+            return [position[0], position[1]]
         }
 
         return Object.freeze({

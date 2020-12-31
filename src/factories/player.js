@@ -4,7 +4,7 @@ export function makePlayer(canvasW, canvasH, ctx, image) {
     const img = new Image()
     img.src = image
 
-    return function (x, y) {
+    return function (position) {
         const keyPressMap = {
             'ArrowUp': 0,
             'ArrowDown': 0,
@@ -19,7 +19,7 @@ export function makePlayer(canvasW, canvasH, ctx, image) {
         const maxY = canvasH - playerCenter
 
         function draw() {
-            ctx.drawImage(img, x - playerCenter, y - playerCenter, imageSize, imageSize)
+            ctx.drawImage(img, position[0] - playerCenter, position[1] - playerCenter, imageSize, imageSize)
         }
 
         function press(key, isPressed) {
@@ -29,25 +29,25 @@ export function makePlayer(canvasW, canvasH, ctx, image) {
 
         function update() {
             if (keyPressMap.ArrowUp)
-                y = y - moveSpeed
+                position[1] = position[1] - moveSpeed
             if (keyPressMap.ArrowDown)
-                y = y + moveSpeed
+                position[1] = position[1] + moveSpeed
             if (keyPressMap.ArrowRight)
-                x = x + moveSpeed
+                position[0] = position[0] + moveSpeed
             if (keyPressMap.ArrowLeft)
-                x = x - moveSpeed
+                position[0] = position[0] - moveSpeed
             fixBoundaries()
         }
 
         function fixBoundaries() {
-            if (x < minX) x = minX
-            if (x > maxX) x = maxX
-            if (y < minY) y = minY
-            if (y > maxY) y = maxY
+            if (position[0] < minX) position[0] = minX
+            if (position[0] > maxX) position[0] = maxX
+            if (position[1] < minY) position[1] = minY
+            if (position[1] > maxY) position[1] = maxY
         }
 
         function reportLocation() {
-            return [x, y]
+            return [position[0], position[1]]
         }
 
         return Object.freeze({

@@ -1,10 +1,44 @@
-export function makeController(canvasW, canvasH, ctx) {
+export function makeController(canvasW, canvasH, ctx, utils, stateManager) {
+
     return function () {
-        let timeElapsed = 0;
+        const gameStatuses = Object.freeze({
+            READY: 0,
+            RUNNING: 1,
+            PAUSED: 2,
+            GAMEOVER: 3
+        });
+
         let timerInterval;
         let registeredAsyncCb = {}
         let snacks = {}
 
+
+        function start() {
+            reset()
+
+        }
+
+        function stop() {
+
+        }
+
+        function pause() {
+
+        }
+
+        function reset() {
+            stateManager.update({
+                gameStatus: gameStatuses.READY,
+                timeElapsed: 0,
+                player: {
+                  position: []
+                },
+                enemy: {
+                    position: []
+                },
+                snacks: {}
+            })
+        }
 
         function startTimer() {
             timerInterval = setInterval(() => {
@@ -28,24 +62,14 @@ export function makeController(canvasW, canvasH, ctx) {
         }
 
         function doSomethingEvery(everySec, cb) {
-            registeredAsyncCb[makeId(5)] = {
+            registeredAsyncCb[utils.makeId(5)] = {
                 every: everySec,
                 cb
             }
         }
 
-        function makeId(length) {
-            let result = '';
-            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-            const charactersLength = characters.length;
-            for (let i = 0; i < length; i++) {
-                result += characters.charAt(Math.floor(Math.random() * charactersLength));
-            }
-            return result;
-        }
-
         function addSnack(snack, duration) {
-            const id = makeId(5)
+            const id = utils.makeId(5)
             snacks[id] = {
                 snack
             }
@@ -59,6 +83,10 @@ export function makeController(canvasW, canvasH, ctx) {
         }
 
         return Object.freeze({
+            start,
+            stop,
+            pause,
+            reset,
             startTimer,
             clearTimer,
             getElapsedTime,
