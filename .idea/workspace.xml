@@ -5,9 +5,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/factories/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/factories/controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/factories/frameDrawManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/factories/frameDrawManager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/factories/enemy.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/factories/enemy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/factories/player.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/factories/player.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/factories/snack.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/factories/snack.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/factories/stateManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/factories/stateManager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/factories/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/factories/utils.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

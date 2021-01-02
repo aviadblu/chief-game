@@ -1,6 +1,4 @@
-export function makeEnemy(canvasW, canvasH, ctx, image) {
-    const moveSpeed = 1;
-    const imageSize = 140;
+export function makeEnemy(canvasW, canvasH, ctx, utils, image, size, speed) {
     const img = new Image()
     img.src = image
 
@@ -8,14 +6,16 @@ export function makeEnemy(canvasW, canvasH, ctx, image) {
     let moveDirectionY = 0;
 
     return function (position) {
-        const center = imageSize / 2
+        const center = size / 2
         const minX = center
         const maxX = canvasW - center
         const minY = center
         const maxY = canvasH - center
 
+        const rect = utils.rect(position[0], position[1], size, size)()
+
         function draw() {
-            ctx.drawImage(img, position[0] - center, position[1] - center, imageSize, imageSize)
+            ctx.drawImage(img, position[0] - center, position[1] - center, size, size)
         }
 
         function vectorNorm(vec) {
@@ -25,8 +25,8 @@ export function makeEnemy(canvasW, canvasH, ctx, image) {
 
         function updateMoveDirectionPoint(targetPoint) {
             const directionVec = vectorNorm([position[0] - targetPoint[0], position[1] - targetPoint[1]])
-            position[0] = position[0] - directionVec[0] * moveSpeed
-            position[1] = position[1] - directionVec[1] * moveSpeed
+            position[0] = position[0] - directionVec[0] * speed
+            position[1] = position[1] - directionVec[1] * speed
         }
 
         function update() {
@@ -46,11 +46,16 @@ export function makeEnemy(canvasW, canvasH, ctx, image) {
             return [position[0], position[1]]
         }
 
+        function reportRect() {
+            return rect.getRect()
+        }
+
         return Object.freeze({
             draw,
             updateMoveDirectionPoint,
             update,
-            reportLocation
+            reportLocation,
+            reportRect
         })
     }
 }

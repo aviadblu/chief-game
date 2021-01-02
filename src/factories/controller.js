@@ -26,27 +26,34 @@ export function makeController(canvasW, canvasH, ctx, utils, stateManager, frame
             createSnack = snackObj
         }
 
+        function ready() {
+            registerKeyboardEvents((key, type) => {
+                player.press(key, type);
+            })
+            stateManager.update({
+                gameStatus: gameStatuses.READY
+            })
+        }
+
         function start() {
             reset()
             stateManager.update({
                 gameStatus: gameStatuses.RUNNING
             })
             startTimer()
-            registerKeyboardEvents((key, type) => {
-                player.press(key, type);
-            })
+
 
             doSomethingEvery(3, () => {
                 const randX = utils.getRandomArbitrary(0, canvasW);
                 const randY = utils.getRandomArbitrary(0, canvasH);
-                const snack = createSnack([randX, randY], 100)
+                const snack = createSnack([randX, randY], Math.floor(utils.getRandomArbitrary(50, 150)))
                 addSnack(snack, 20)
             })
 
             frameDrawManager.onFrameCbRegister(() => {
 
                 if (checkLoose(player.reportLocation(), enemy.reportLocation())) {
-                    frameDrawManager.stop()
+                    loose()
                 }
                 player.draw()
                 player.update()
@@ -55,7 +62,7 @@ export function makeController(canvasW, canvasH, ctx, utils, stateManager, frame
                 enemy.update()
 
                 getSnacks().forEach((snack) => {
-                    const collected = snack.checkIfSnackCollected(player.reportLocation())
+                    const collected = snack.checkIfSnackCollected(player.reportRect())
                     if (collected)
                         increaseCollectedSnacks()
                     snack.draw()
@@ -76,13 +83,13 @@ export function makeController(canvasW, canvasH, ctx, utils, stateManager, frame
         }
 
         function pause() {
-            if(stateManager.getState()['gameStatus'] === gameStatuses.RUNNING) {
+            if (stateManager.getState()['gameStatus'] === gameStatuses.RUNNING) {
                 stateManager.update({
                     gameStatus: gameStatuses.PAUSED
                 })
                 clearTimer()
                 frameDrawManager.stop()
-            } else if(stateManager.getState()['gameStatus'] === gameStatuses.PAUSED) {
+            } else if (stateManager.getState()['gameStatus'] === gameStatuses.PAUSED) {
                 stateManager.update({
                     gameStatus: gameStatuses.RUNNING
                 })
@@ -103,6 +110,19 @@ export function makeController(canvasW, canvasH, ctx, utils, stateManager, frame
             addEventListener('keydown', (event) => {
                 if (event.key === "Pause")
                     pause()
+            })
+
+            addEventListener('keydown', (event) => {
+                if (event.key === " ") {
+
+                    if ([gameStatuses.RUNNING, gameStatuses.PAUSED].includes(stateManager.getState()['gameStatus'])) {
+                        pause()
+                    }
+
+                    if ([gameStatuses.READY, gameStatuses.GAMEOVER].includes(stateManager.getState()['gameStatus'])) {
+                        start()
+                    }
+                }
             })
 
         }
@@ -180,18 +200,15 @@ export function makeController(canvasW, canvasH, ctx, utils, stateManager, frame
             return distance < 80
         }
 
+        function loose() {
+            frameDrawManager.stop()
+        }
+
         return Object.freeze({
             registerPlayer,
             registerEnemy,
             registerSnack,
-            start,
-            stop,
-            startTimer,
-            clearTimer,
-            getElapsedTime,
-            doSomethingEvery,
-            addSnack,
-            getSnacks
+            ready
         })
     }
 }

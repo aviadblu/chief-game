@@ -1,6 +1,4 @@
-export function makePlayer(canvasW, canvasH, ctx, image) {
-    const moveSpeed = 10;
-    const imageSize = 85;
+export function makePlayer(canvasW, canvasH, ctx, utils, image, size, speed) {
     const img = new Image()
     img.src = image
 
@@ -12,14 +10,16 @@ export function makePlayer(canvasW, canvasH, ctx, image) {
             'ArrowLeft': 0
         }
 
-        const playerCenter = imageSize / 2
+        const playerCenter = size / 2
         const minX = playerCenter
         const maxX = canvasW - playerCenter
         const minY = playerCenter
         const maxY = canvasH - playerCenter
 
+        let rect = utils.rect(position[0] - playerCenter, position[1] - playerCenter, size, size)()
+
         function draw() {
-            ctx.drawImage(img, position[0] - playerCenter, position[1] - playerCenter, imageSize, imageSize)
+            ctx.drawImage(img, position[0] - playerCenter, position[1] - playerCenter, size, size)
         }
 
         function press(key, isPressed) {
@@ -29,14 +29,15 @@ export function makePlayer(canvasW, canvasH, ctx, image) {
 
         function update() {
             if (keyPressMap.ArrowUp)
-                position[1] = position[1] - moveSpeed
+                position[1] = position[1] - speed
             if (keyPressMap.ArrowDown)
-                position[1] = position[1] + moveSpeed
+                position[1] = position[1] + speed
             if (keyPressMap.ArrowRight)
-                position[0] = position[0] + moveSpeed
+                position[0] = position[0] + speed
             if (keyPressMap.ArrowLeft)
-                position[0] = position[0] - moveSpeed
+                position[0] = position[0] - speed
             fixBoundaries()
+            rect = utils.rect(position[0] - playerCenter, position[1] - playerCenter, size, size)()
         }
 
         function fixBoundaries() {
@@ -50,11 +51,16 @@ export function makePlayer(canvasW, canvasH, ctx, image) {
             return [position[0], position[1]]
         }
 
+        function reportRect() {
+            return rect.getRect()
+        }
+
         return Object.freeze({
             draw,
             press,
             update,
-            reportLocation
+            reportLocation,
+            reportRect
         })
     }
 }

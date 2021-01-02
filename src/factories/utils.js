@@ -1,6 +1,6 @@
 export function makeUtils() {
 
-    return function() {
+    return function () {
 
         function makeId(length) {
             let result = '';
@@ -16,8 +16,31 @@ export function makeUtils() {
             return Math.random() * (max - min) + min;
         }
 
+        function rect(x, y, w, h) {
+            return function () {
+                function intersects(rect) {
+                    return !(rect.x > (x + w) ||
+                        (rect.x + rect.w) < x ||
+                        rect.y > (y + h) ||
+                        (rect.y + rect.h) < y);
+                }
+
+                function getRect() {
+                    return {
+                        x, y, w, h
+                    }
+                }
+
+                return Object.freeze({
+                    intersects,
+                    getRect
+                })
+            }
+        }
+
 
         return Object.freeze({
+            rect,
             makeId,
             getRandomArbitrary
         })
