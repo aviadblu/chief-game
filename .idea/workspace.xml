@@ -2,13 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c0718084-fa55-48c8-9046-ba7800072230" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/services/router.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/game.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/homepage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/factories/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/factories/controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/factories/enemy.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/factories/enemy.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/factories/player.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/factories/player.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/factories/snack.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/factories/snack.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/factories/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/factories/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/candy1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/candy1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/factories/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/factories/frameDrawManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/frameDrawManager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/factories/stateManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/stateManager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/main.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +46,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Kryon_PD/Src/ABPD/Server/Orchestrator" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/views" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -52,9 +55,12 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\code\chief-game\src\views" />
       <recent name="D:\code\chief-game\src\factories" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\code\chief-game\src\services" />
+      <recent name="D:\code\chief-game\src\views" />
       <recent name="C:\pcode\chief-game\src" />
       <recent name="C:\pcode\chief-game\src\scss" />
     </key>

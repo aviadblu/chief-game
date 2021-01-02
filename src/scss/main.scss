@@ -25,3 +25,30 @@ canvas {
   padding: 0;
   box-sizing: border-box;
 }
+
+.optionSelectWrapper {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.optionSelectWrapper > img {
+  background-color: #f1f1f1;
+  border: 2px solid gray;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+  cursor: pointer;
+
+  &.selected {
+    border-color: chartreuse;
+  }
+}
+
+#startBtn {
+  width: 300px;
+  height: 50px;
+  border: 1px solid gray;
+  background-color: cadetblue;
+}
