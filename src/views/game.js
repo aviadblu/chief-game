@@ -1,9 +1,13 @@
-export function makeGamePage(makeCanvas) {
+export function makeGamePage(makeCanvas, bgImage) {
     return function () {
 
         function build() {
             const canvas = makeCanvas()
-            document.getElementById("canvasWrapper").appendChild(canvas);
+            const canvasWrapper = document.getElementById("canvasWrapper")
+            canvasWrapper.appendChild(canvas);
+
+            console.log(bgImage);
+            canvasWrapper.style.backgroundImage = "url('" + bgImage + "')"
         }
 
         function context() {

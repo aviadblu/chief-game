@@ -1,13 +1,14 @@
-export function makeHomePage(playerOptions, enemyOptions, startGame) {
+export function makeHomePage(playerOptions, enemyOptions, backgroundOptions,  startGame) {
     return function () {
 
         let selectedPlayerIndex = 0
         let selectedEnemyIndex = 0
+        let selectedBgIndex = 0
 
-        function buildOptionSelectWrapper(options, className, clickFunc, selectedIndex) {
+        function buildOptionSelectWrapper(txt, options, className, clickFunc, selectedIndex) {
             const wrapperDiv = document.createElement('div')
             wrapperDiv.classList.add("optionSelectHeadline")
-            wrapperDiv.innerHTML = "Please select player:"
+            wrapperDiv.innerHTML = txt
             wrapperDiv.appendChild(buildOptions(options, className, clickFunc, selectedIndex))
             return wrapperDiv
         }
@@ -32,7 +33,20 @@ export function makeHomePage(playerOptions, enemyOptions, startGame) {
 
         function build() {
             const wrapper = document.getElementById("homePageWrapper")
-            wrapper.prepend(buildOptionSelectWrapper(playerOptions, "playerOption", (i) => {
+            wrapper.prepend(buildOptionSelectWrapper("Background: ", backgroundOptions, "backgroundOption", (i) => {
+                selectedBgIndex = i;
+
+                let it = 0;
+                [].forEach.call(document.getElementsByClassName("backgroundOption"), (el => {
+                    el.classList.remove("selected")
+                    if (it === selectedBgIndex)
+                        el.classList.add("selected")
+                    it++
+                }))
+            }, selectedBgIndex))
+
+
+            wrapper.prepend(buildOptionSelectWrapper("Player: ", playerOptions, "playerOption", (i) => {
                 selectedPlayerIndex = i;
 
                 let it = 0;
@@ -48,7 +62,7 @@ export function makeHomePage(playerOptions, enemyOptions, startGame) {
         function context() {
 
             function start() {
-                startGame(playerOptions[selectedPlayerIndex], enemyOptions[selectedEnemyIndex])
+                startGame(backgroundOptions[selectedBgIndex], playerOptions[selectedPlayerIndex], enemyOptions[selectedEnemyIndex])
             }
 
             return Object.freeze({

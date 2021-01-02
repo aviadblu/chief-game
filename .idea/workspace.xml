@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c0718084-fa55-48c8-9046-ba7800072230" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/services/router.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/game.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/homepage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/candy1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/candy1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/factories/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/factories/frameDrawManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/frameDrawManager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/factories/stateManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/stateManager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/candy2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/candy2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/homepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/homepage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

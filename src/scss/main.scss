@@ -15,7 +15,7 @@ div {
   padding: 0;
   background-color: chartreuse;
   height: 100%;
-  background-image: url(../assets/bg-rainbow.png);
+  //background-image: url(../assets/bg-rainbow.png);
   background-size: cover;
 }
 
@@ -26,9 +26,18 @@ canvas {
   box-sizing: border-box;
 }
 
+
+.homePageWrapper {
+  text-align: center;
+  padding-top: 150px;
+}
+
 .optionSelectWrapper {
   display: flex;
   flex-wrap: nowrap;
+  margin: 20px 0;
+  align-items: center;
+  justify-content: center;
 }
 
 .optionSelectWrapper > img {
@@ -51,4 +60,7 @@ canvas {
   height: 50px;
   border: 1px solid gray;
   background-color: cadetblue;
+  color: #f1f1f1;
+  font-size: 20px;
+  cursor: pointer;
 }

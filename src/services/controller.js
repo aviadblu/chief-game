@@ -46,7 +46,7 @@ export function makeController(canvasW, canvasH, ctx, utils, stateManager, frame
             doSomethingEvery(3, () => {
                 const randX = utils.getRandomArbitrary(0, canvasW);
                 const randY = utils.getRandomArbitrary(0, canvasH);
-                const snack = createSnack([randX, randY], Math.floor(utils.getRandomArbitrary(50, 150)))
+                const snack = createSnack([randX, randY], Math.round(utils.getRandomArbitrary(50, 150)))
                 addSnack(snack, 20)
             })
 
