@@ -1,8 +1,9 @@
-export function makeSnack(canvasW, canvasH, ctx) {
+export function makeSnack(canvasW, canvasH, ctx, image) {
 
-    return function (position, image, size) {
+    return function (position, size) {
         const img = new Image()
         img.src = image
+
         let collected = false
         position = fixOutOfBounds(position, size)
 

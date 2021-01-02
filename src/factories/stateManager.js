@@ -3,13 +3,11 @@ export function makeStateManager(utils) {
     const stateChangeEventRegistration = {}
 
     function update(statePiece) {
-
         Object.assign(state, statePiece)
-        console.log("state updated", state);
     }
 
     function getState() {
-        return Object.freeze(state)
+        return state
     }
 
     function onChangeListener(node, cb) {
