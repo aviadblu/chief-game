@@ -2,14 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c0718084-fa55-48c8-9046-ba7800072230" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/ui-packages/home-package.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui-packages/tier4-package.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/candy1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/candy1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/candy2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/candy2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/aviad-linoy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/bg-rainbow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/bg2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/bg3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/candy1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/candy2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/candy3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/candy4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/chief.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/dean-jul.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/dean.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/dogRun.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/jul.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/lolipop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/factories/domFactory.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/factories/domFactory.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/game.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/homepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/homepage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +50,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
@@ -44,15 +59,16 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/views" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/ui-packages" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="ts.external.directory.path" value="C:\pcode\chief-game\node_modules\typescript\lib" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+    <property name="ts.external.directory.path" value="C:\code\chief-game\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\code\chief-game\src\ui-packages" />
       <recent name="D:\code\chief-game\src\views" />
       <recent name="D:\code\chief-game\src\factories" />
     </key>
@@ -115,6 +131,11 @@
       <workItem from="1609402392915" duration="3004000" />
       <workItem from="1609405678274" duration="42000" />
       <workItem from="1609405754685" duration="949000" />
+      <workItem from="1609657849518" duration="140000" />
+      <workItem from="1609657999711" duration="345000" />
+      <workItem from="1609659283422" duration="399000" />
+      <workItem from="1609660174098" duration="126000" />
+      <workItem from="1609673162898" duration="1592000" />
     </task>
     <servers />
   </component>
